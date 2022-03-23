@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom';
 //import { Provider } from 'react-redux';
 //import { combineReducers, createStore } from 'redux';
 import { BrowserRouter } from 'react-router-dom';
-import ProductsProvider from './context/products-context';
+//import ProductsProvider from './context/products-context';
 import './index.css';
 import App from './App';
+import configureStore from './components/hooks-store/products-store.js';
 //import productReducer from './store/reducers/products';
 
 // const rootReducer = combineReducers({
@@ -14,12 +15,13 @@ import App from './App';
 
 // const store = createStore(rootReducer);
 
+configureStore();
+
 ReactDOM.render(
-  <ProductsProvider>  
-  {/* <Provider store={store}></ProductsProvider> */}
+ 
+  {/* <Provider store={store}></ProductsProvider> */},
     <BrowserRouter>
       <App />
-    </BrowserRouter>
-  </ProductsProvider>,
+    </BrowserRouter>,
   document.getElementById('root')
 );
